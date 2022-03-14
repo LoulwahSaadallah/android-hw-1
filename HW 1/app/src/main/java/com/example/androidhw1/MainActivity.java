@@ -1,3 +1,13 @@
+package com.example.androidhw1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -9,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         EditText MidTerms = findViewById(R.id.Mid) ;
         EditText Finals = findViewById(R.id.Fin) ;
         Button cal = findViewById(R.id.calculate) ;
+        Button clear =findViewById(R.id. clear);
         TextView result = findViewById(R.id.total) ;
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -21,5 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 result.setText(total + "");
             }
         });
+
+       clear.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Quizzes.setText(null);
+               Homework.setText(null);
+               MidTerms.setText(null);
+               Finals.setText(null);
+           }
+       });
     }
 }
